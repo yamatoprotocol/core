@@ -1,20 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": ["es6"],
+    "target": "ES2018",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "declaration": true,
-    "strict": false,
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "removeComments": true,
-    "noImplicitAny": false,
+    "strict": true,
     "esModuleInterop": true,
-    "baseUrl": "./",
-    "outDir": "dist"
+    "outDir": "dist",
+    "resolveJsonModule": true
   },
   "include": [
     "hardhat.config.ts",
@@ -22,5 +13,7 @@
     "deploy/**/*.ts",
     "./node_modules/hardhat/hardhat-ethers/src/type-extensions.d.ts",
     "./typechain/**/*.ts"
-  ]
+  ],
+  "exclude": ["node_modules", "artifacts", "coverage", "scripts"]
+
 }

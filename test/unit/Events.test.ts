@@ -1,4 +1,4 @@
-import { ethers } from "hardhat";
+import  ethers  from "hardhat";
 import { FakeContract, smock } from "@defi-wonderland/smock";
 import chai, { expect } from "chai";
 import { Signer, BigNumber, Wallet } from "ethers";
@@ -439,3 +439,7 @@ describe("story Events", function () {
     });
   });
 });
+function beforeEach(arg0: () => Promise<void>) {
+  throw new Error("Function not implemented.");
+}
+
