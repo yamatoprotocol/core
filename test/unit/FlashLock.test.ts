@@ -1,4 +1,4 @@
-import { ethers } from "hardhat";
+import ethers from "hardhat";
 import { smock } from "@defi-wonderland/smock";
 import chai, { expect } from "chai";
 import { Signer, BigNumber } from "ethers";

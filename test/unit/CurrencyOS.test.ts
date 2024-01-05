@@ -1,4 +1,4 @@
-import { ethers } from "hardhat";
+import ethers  from "hardhat";
 import { FakeContract, smock } from "@defi-wonderland/smock";
 import chai, { expect } from "chai";
 import { Signer } from "ethers";
@@ -81,7 +81,7 @@ describe("CurrencyOS", () => {
     it(`fails to add new Yamato for non-governer.`, async function () {
       await expect(
         currencyOS.connect(accounts[1]).addYamato(mockYamato.address)
-      ).to.be.revertedWith("You are not the governer.");
+      ).to.be.rejectedWith("You are not the governer.");
     });
 
     it(`succeeds to add new Yamato`, async function () {
@@ -93,7 +93,7 @@ describe("CurrencyOS", () => {
     it(`fails to add the same Yamato twice.`, async function () {
       await currencyOS.addYamato(mockYamato.address);
 
-      await expect(currencyOS.addYamato(mockYamato.address)).to.be.revertedWith(
+      await expect(currencyOS.addYamato(mockYamato.address)).to.be.rejectedWith(
         "Duplicated Yamato."
       );
     });
@@ -104,7 +104,7 @@ describe("CurrencyOS", () => {
       // await currencyOS.mintCJPY(ownerAddress, 10000);
       await expect(
         currencyOS.mintCurrency(ownerAddress, 10000)
-      ).to.be.revertedWith("No Yamato is registered.");
+      ).to.be.rejectedWith("No Yamato is registered.");
     });
 
     it(`succeeds to mint CJPY`, async function () {
@@ -118,7 +118,7 @@ describe("CurrencyOS", () => {
     it(`fails to burn CJPY`, async function () {
       await expect(
         currencyOS.burnCurrency(ownerAddress, 10000)
-      ).to.be.revertedWith("No Yamato is registered.");
+      ).to.be.rejectedWith("No Yamato is registered.");
     });
 
     it(`succeeds to burn CJPY`, async function () {

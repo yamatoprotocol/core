@@ -77,3 +77,4 @@ contract Currency is ERC20Permit, ICurrency {
         emit RevokeGovernance(msg.sender);
     }
 }
+
